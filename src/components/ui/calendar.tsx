@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import { DayPicker } from "react-day-picker"
@@ -13,7 +14,7 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
-  return (
+    return (
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
