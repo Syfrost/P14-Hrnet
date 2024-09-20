@@ -6,7 +6,6 @@ import {
   ChevronUpIcon,
 } from "@radix-ui/react-icons"
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import * as SelectPrimitive from "@radix-ui/react-select"
 
 import { cn } from "@/lib/utils"
