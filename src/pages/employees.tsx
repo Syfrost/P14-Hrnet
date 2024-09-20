@@ -4,13 +4,15 @@ import { RootState } from '@/store';
 import { addEmployee } from '@/store/slices/employees';
 import { generateRandomUsers } from '@/lib/generateFakeUsers';
 import { DataTable } from '@/components/customTable';
+import { Employee } from '@/store/slices/employees';
 
 const Employees: React.FC = () => {
     const dispatch = useDispatch();
     const employees = useSelector((state: RootState) => state.employees);
 
     useEffect(() => {
-        const users = generateRandomUsers(50);
+        const lastId = employees.length > 0 ? Math.max(...employees.map((employee: Employee) => Number(employee.id))) : -1;
+        const users = generateRandomUsers(50, lastId + 1);
         users.forEach(user => {
             dispatch(addEmployee(user));
         });

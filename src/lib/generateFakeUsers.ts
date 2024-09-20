@@ -21,11 +21,11 @@ function getRandomElement(array: string[]): string {
     return array[Math.floor(Math.random() * array.length)];
 }
 
-export function generateRandomUsers(count: number): Employee[] {
+export function generateRandomUsers(count: number, startId: number): Employee[] {
     const users: Employee[] = [];
     for (let i = 0; i < count; i++) {
         const user: Employee = {
-            id: i.toString(),
+            id: (startId + i).toString(),
             firstName: getRandomElement(firstNames),
             lastName: getRandomElement(lastNames),
             birthDate: getRandomDate(),

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils";
@@ -33,6 +34,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addEmployee, Employee } from '@/store/slices/employees';
 import { RootState } from '@/store';
 import { generateRandomUsers } from '@/lib/generateFakeUsers';
+import { ModalComponent } from '@syfrost/modal-pkg';
 
 const formSchema = z.object({
     firstName: z.string().min(2, {
@@ -62,6 +64,7 @@ const formSchema = z.object({
 export function ProfileForm() {
     const dispatch = useDispatch();
     const employees = useSelector((state: RootState) => state.employees);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -77,8 +80,9 @@ export function ProfileForm() {
         },
     });
 
-    function generateUsers() {
-       const users = generateRandomUsers(50);
+    function generateUsers() { //DEV
+        const lastId = employees.length > 0 ? Math.max(...employees.map((employee: Employee) => Number(employee.id))) : -1;
+       const users = generateRandomUsers(50, lastId + 1);
         users.forEach(user => {
             dispatch(addEmployee(user));
         });
@@ -91,9 +95,15 @@ export function ProfileForm() {
         const id = (maxId + 1).toString();
         // Ajouter l'employé au store
         dispatch(addEmployee({ ...values, id }));
+        setIsModalOpen(true);
+    }
+
+    function closeModal() {
+        setIsModalOpen(false);
     }
 
     return (
+    <>
         <Card title="Profile Form" className="w-[480px] p-6">
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -288,5 +298,7 @@ export function ProfileForm() {
                 </form>
             </Form>
         </Card>
+        {isModalOpen && <ModalComponent content="Register Ok" onClose={closeModal} />}
+    </>
     );
 }
