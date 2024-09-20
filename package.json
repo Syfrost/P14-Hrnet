@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/syfrost/P14-Hrnet",
+  "homepage": "https://syfrost.github.io/P14-Hrnet",
   "name": "ui-hrnet",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "redeploy": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
