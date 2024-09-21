@@ -281,10 +281,10 @@ export function ProfileForm() {
                                 <FormLabel>Department</FormLabel>
                                 <FormControl>
                                     <Select defaultValue="Sales" onValueChange={field.onChange}>
-                                        <SelectTrigger className="w-full">
+                                        <SelectTrigger className="w-full" aria-label="Select a department">
                                             <SelectValue placeholder="Select a department"/>
                                         </SelectTrigger>
-                                        <SelectContent>
+                                        <SelectContent aria-label="Department options">
                                             <SelectItem value="Sales">Sales</SelectItem>
                                             <SelectItem value="Marketing">Marketing</SelectItem>
                                             <SelectItem value="Engineering">Engineering</SelectItem>
