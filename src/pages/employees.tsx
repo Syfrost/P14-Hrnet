@@ -6,7 +6,7 @@ import { generateRandomUsers } from '@/lib/generateFakeUsers';
 import { DataTable } from '@/components/customTable';
 import { Employee } from '@/store/slices/employees';
 
-const Employees: React.FC = () => {
+export const Employees: React.FC = () => {
     const dispatch = useDispatch();
     const employees = useSelector((state: RootState) => state.employees);
 

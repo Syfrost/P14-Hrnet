@@ -156,9 +156,11 @@ export function ProfileForm() {
                                         <PopoverContent className="w-auto p-0">
                                             <Calendar
                                                 mode="single"
+                                                captionLayout="dropdown-buttons"
                                                 selected={field.value}
                                                 onSelect={field.onChange}
-                                                initialFocus
+                                                fromYear={1910}
+                                                toYear={2030}
                                             />
                                         </PopoverContent>
                                     </Popover>
@@ -190,9 +192,11 @@ export function ProfileForm() {
                                         <PopoverContent className="w-auto p-0">
                                             <Calendar
                                                 mode="single"
+                                                captionLayout="dropdown-buttons"
                                                 selected={field.value}
                                                 onSelect={field.onChange}
-                                                initialFocus
+                                                fromYear={1910}
+                                                toYear={2030}
                                             />
                                         </PopoverContent>
                                     </Popover>
@@ -298,7 +302,7 @@ export function ProfileForm() {
                 </form>
             </Form>
         </Card>
-        {isModalOpen && <ModalComponent content="Register Ok" onClose={closeModal} />}
+        {isModalOpen && <ModalComponent content="Employee Created!" onClose={closeModal} />}
     </>
     );
 }

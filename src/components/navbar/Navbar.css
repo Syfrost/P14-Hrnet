@@ -1,0 +1,46 @@
+.navbar-container {
+    padding-bottom: 20px;
+    width: 80%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 50px; /* Set the height to 100px */
+    width: 100%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar li a {
+    color: black; /* Set link color to black */
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+.navbar li a:hover {
+    background-color: #f0f0f0;
+}
+
+.navbar-in {
+    height: 50px; /* Set the height to 100px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-in h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -4,6 +4,8 @@
   padding: 2rem;
   text-align: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -41,4 +43,40 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.rdp-vhidden {
+  @apply hidden;
+}
+
+
+/*NavbarCss-------------------------------------*/
+.navbar {
+  width: 100%;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #111;
 }
